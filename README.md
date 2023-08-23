@@ -1,0 +1,2 @@
+# printf
+printf @ 42
