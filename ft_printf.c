@@ -12,6 +12,12 @@
 
 #include "ft_printf.h"
 
+int ft_par(char *s, va_list args)
+{
+    int i;
+    int count;
+}
+
 int	ft_mng(int c, va_list *args)
 {
 	int	size;
@@ -45,7 +51,11 @@ int	ft_printf(const char *fmt, ...)
 {
 	va_list	args;
 	int		size;
+    char *str;
 
+    if (!fmt || *fmt == '\0')
+        return (0);
+    str = ft_strdup(fmt);
 	va_start(args, fmt);
 	size = 0;
 	while (*fmt)
@@ -58,6 +68,7 @@ int	ft_printf(const char *fmt, ...)
 			size += ft_c(*fmt);
 		fmt++;
 	}
-	return (size);
 	va_end(args);
+    free(str);
+    return (size);
 }

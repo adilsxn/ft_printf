@@ -14,9 +14,25 @@
 # define FT_PRINTF_H
 
 # include <stdarg.h>
+# include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
 
+typedef struct s_options
+{
+    int spec;
+    int width;
+    int zero;
+    int hash;
+    int space;
+    int plus;
+    int left;
+    int star;
+    int prec;
+} t_options;
+
+int ft_strlen(char *str);
+char *ft_strdup(const char *src);
 int	ft_c(int c);
 int	ft_s(const char *str);
 int	ft_di(int n);
