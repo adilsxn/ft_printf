@@ -31,10 +31,25 @@ typedef struct s_options
     int prec;
 } t_options;
 
+
+t_options opt_left(t_options opts);
+int opt_pad(int width, int size, int zero);
+t_options opt_digit(char c, t_options opts);
+t_options opt_width(va_list args, t_options opts);
+int opt_prec(const char *s, int pos, va_list args, t_options *opts);
+//-----------//
+int is_opt(int c);
+int is_kind(int c);
+int is_spec(int c);
+//----------//
+int ft_isdigit(int c);
 int ft_strlen(char *str);
 char *ft_strdup(const char *src);
+int ft_par(char *s, va_list args);
+//---------//
 int	ft_c(int c);
-int	ft_s(const char *str);
+int ft_prntc(int c, t_options opts);
+//--------//
 int	ft_di(int n);
 int	ft_u(unsigned int n);
 int	ft_hexing(unsigned long int n, char *b);
